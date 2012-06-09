@@ -23,4 +23,6 @@ fille(X, Y) :- parent(Y, X), femelle(X).
 
 frere(X, Y) :- fils(X, Z) , parent(Z, Y).
 
+equal(X, X).
+
 ?- frere(X, leia).

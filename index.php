@@ -12,6 +12,7 @@ ini_set('display_errors', false);
 
 $preprocessor = new PrologPreprocessor($prolog_source_code);
 $scanner = new PrologScanner($preprocessor->program());
+
 $parser = new PrologParser($scanner);
 
 $wimcode = $parser->parse(); // compile inclusive!
@@ -21,4 +22,7 @@ if (!$parser->hasErrors()) {
     $machine = new PrologMachine($wimcode);
     $results = $machine->execute();
     echo $results;
+}
+else {
+    print_r($parser->errors);
 }
