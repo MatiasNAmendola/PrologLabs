@@ -16,7 +16,7 @@ $scanner = new PrologScanner($preprocessor->program());
 $parser = new PrologParser($scanner);
 
 $wimcode = $parser->parse(); // compile inclusive!
-
+echo $wimcode;
 if (!$parser->hasErrors()) {
 
     $machine = new PrologMachine($wimcode);
